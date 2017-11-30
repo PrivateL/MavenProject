@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>project-parent</artifactId>
+    <groupId>com.jsu</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>project-manager</artifactId>
+  <packaging>pom</packaging>
+  
+  <!-- 依赖管理 -->
+  <dependencies>
+  	<dependency>
+		<artifactId>common</artifactId>
+		<groupId>com.jsu</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+  
+  <!-- 子模块 -->
+  <modules>
+  	<module>project-manager-pojo</module>
+  	<module>project-manager-dao</module>
+  	<module>project-manager-service</module>
+  	<module>project-manager-action</module>
+  </modules>
+  
+  <build>
+  	<!-- 配置插件 -->
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.tomcat.maven</groupId>
+			<artifactId>tomcat7-maven-plugin</artifactId>
+			<configuration>
+				<port>8080</port>
+				<path>/</path>
+			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+  
+</project>
